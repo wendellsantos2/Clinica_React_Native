@@ -47,7 +47,7 @@ export default function Login({ navigation }: { navigation: NavigationProp<any> 
         AsyncStorage.setItem('token', token);
         AsyncStorage.setItem('nome', nome);
 
-        navigation.navigate('Tabs');
+        //navigation.navigate('Tabs');
       } else {
         toast.show({
           title: 'Erro no login',

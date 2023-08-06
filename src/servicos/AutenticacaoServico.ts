@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 
 const api = axios.create({
@@ -6,7 +5,7 @@ const api = axios.create({
 });
 export default api;
 
- 
+// Função para fazer login
 export async function fazerLogin(email: string, senha: string) {
     if (!email || !senha) return null;
     
@@ -16,10 +15,10 @@ export async function fazerLogin(email: string, senha: string) {
             Password: senha   
         });
 
-        console.log("Resultado =", resultado.data.Token); // Exibir o token retornado
-        return resultado.data.Token;
+        console.log("Token:", resultado.data); // Exibir o objeto de resposta inteiro
+        return resultado.data; // Retornar o objeto de resposta inteiro (incluindo o token)
     } catch (error) {
-        console.log(error);
+        console.log("Erro:", error);
         return null;
     }
 }
